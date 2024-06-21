@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "851576399131",
+    "project_id": "kawaiibd-chatapp",
+    "storage_bucket": "kawaiibd-chatapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851576399131:android:a1686e41527b850b155fbe",
+        "android_client_info": {
+          "package_name": "com.kawaiibd.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851576399131-2m3o02o4e7n1pqgdjn9metvhud4685hp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIJBAeFfKBsfUmVFzqrxUzqd2Fy8jBuEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851576399131-2m3o02o4e7n1pqgdjn9metvhud4685hp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
