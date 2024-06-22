@@ -37,3 +37,5 @@ double smPadding = rgPadding / 2;
 double miniPadding = smPadding / 1.5;
 
 double screenPadding = regular / 1.25;
+
+const kPrimaryColor = Colors.teal;

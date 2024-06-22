@@ -13,7 +13,6 @@ mixin _BaseView {
         child: Consumer(builder: (context, ref, _) {
           return ref.watch(networkStatusProvider).when(
               data: (network) {
-                // log('Network status: $network');
                 return network == NetworkStatus.OFFLINE
                     ? const KErrorWidget()
                     : scrollable()
