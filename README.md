@@ -32,7 +32,8 @@
 
 <table>
 <tr>
-     <td>Video Preview</td>
+     <td><a href="https://drive.google.com/drive/u/2/folders/1yI6kdUbndne59eNw1mCHjkXdqHL7C9R6" target="_blank">Full Video Here</a>
+</td>
      </tr>
  <tr> <td>
  <img src="assets/screens/app_preview.gif" width=270 >
