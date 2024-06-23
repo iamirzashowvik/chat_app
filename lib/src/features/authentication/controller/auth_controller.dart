@@ -45,7 +45,7 @@ class AuthenticationController extends ChangeNotifier {
   }
 
   Future<void> signOut() async {
-    NotificationService.unsubscribeFromFcm(
+    await NotificationService.unsubscribeFromFcm(
         FirebaseAuth.instance.currentUser!.uid);
     await Authentication.signOut();
     checkAuth();

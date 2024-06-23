@@ -78,33 +78,36 @@ class _ChatViewState extends BaseViewState<ChatView> {
                   onTap: () {
                     AppRouters.goToThread(threads[index].user);
                   },
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundImage:
-                            NetworkImage(threads[index].user.photoUrl),
-                      ),
-                      SizedBox(
-                        width: rgPadding,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            isMe(threads[index].user.uid)
-                                ? "Saved Messages (YOU)"
-                                : threads[index].user.username,
-                            style: rgBold.copyWith(
-                                color: Colors.black, fontSize: titleSize),
-                          ),
-                          Text(
-                            threads[index].message,
-                            style: rgBold.copyWith(color: Colors.black),
-                          ),
-                        ],
-                      ),
-                    ],
+                  child: Container(
+                    decoration: const BoxDecoration(color: Colors.white54),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundImage:
+                              NetworkImage(threads[index].user.photoUrl),
+                        ),
+                        SizedBox(
+                          width: rgPadding,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              isMe(threads[index].user.uid)
+                                  ? "Saved Messages (YOU)"
+                                  : threads[index].user.username,
+                              style: rgBold.copyWith(
+                                  color: Colors.black, fontSize: titleSize),
+                            ),
+                            Text(
+                              threads[index].message,
+                              style: rgBold.copyWith(color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );

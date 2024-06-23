@@ -16,7 +16,7 @@ class NotificationService {
         .subscribeToTopic(Platform.isAndroid ? "android" : "ios");
   }
 
-  static void unsubscribeFromFcm(String userId) async {
+  static Future<void> unsubscribeFromFcm(String userId) async {
     await FirebaseMessaging.instance.unsubscribeFromTopic(userId);
   }
 
