@@ -38,6 +38,7 @@
  <img src="assets/screens/app_preview.gif" width=270 >
  </td></tr>
 </table>
+
 ## Database Design:
 
 ```

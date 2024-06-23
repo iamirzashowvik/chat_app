@@ -18,7 +18,9 @@ final networkStatusProvider = StreamProvider<NetworkStatus>((ref) {
   StreamController<NetworkStatus> controller =
       StreamController<NetworkStatus>();
 
-  controller.sink.add(ref.watch(_initNetworkStatusProvider).value!);
+  if (ref.watch(_initNetworkStatusProvider).value != null) {
+    controller.sink.add(ref.watch(_initNetworkStatusProvider).value!);
+  }
 
   Connectivity().onConnectivityChanged.listen((result) {
     controller.add(result.contains(ConnectivityResult.wifi) ||

@@ -1,4 +1,5 @@
 import 'package:chat_app/src/constants/app_strings.dart';
+import 'package:chat_app/src/routing/router.dart';
 import 'package:chat_app/src/utils/services/auth.dart';
 import 'package:chat_app/src/utils/services/cloud_db.dart';
 import 'package:chat_app/src/utils/services/notification.dart';
@@ -50,6 +51,7 @@ class AuthenticationController extends ChangeNotifier {
     await Authentication.signOut();
     checkAuth();
 
+    AppRouters.goAuth();
     notifyListeners();
   }
 }
