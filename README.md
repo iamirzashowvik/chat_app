@@ -34,9 +34,11 @@
 To ensure a secure messaging and data retrieval
 We are using prime numbers to indicate a user.
 When a user is authenticated in our app, we set a prime number as a key to their profile.
-We also track the last used prime number to get the next prime number so that every user's keys are unique.
+We also track the last used prime number to get the next prime number so that every
+user's keys are unique.
 
-Now to save & get the chats for two individual users, we simply multiply both keys together. Multiplication of both keys is the document ID for the chat.
+Now to save & get the chats for two individual users, we simply multiply both keys together.
+Multiplication of both keys is the document ID for the chat.
 ```
 
 ## Project Environment:
