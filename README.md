@@ -31,6 +31,9 @@
  </table>
 
 <table>
+<tr>
+     <td>Video Preview</td>
+     </tr>
  <tr> <td>
  <img src="assets/screens/app_preview.gif" width=270 >
  </td></tr>
