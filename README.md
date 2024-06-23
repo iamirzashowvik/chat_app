@@ -30,6 +30,13 @@
   </tr>
  </table>
 
+<table>
+ <tr> <td>
+ <video width="270" controls>
+  <source src="assets/screens/app_video.mov" type="video/mp4">
+</video>
+ </td></tr>
+</table>
 ## Database Design:
 
 ```
