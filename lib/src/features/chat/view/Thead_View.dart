@@ -62,11 +62,13 @@ class _ThreadViewState extends BaseViewState<ThreadView> {
                             padding: EdgeInsets.all(rgPadding),
                             margin: EdgeInsets.only(bottom: rgPadding),
                             decoration: BoxDecoration(
-                                color: kPrimaryColor,
+                                color: isMe(data['senderUid'])
+                                    ? Colors.blue
+                                    : kPrimaryColor,
                                 borderRadius: BorderRadius.circular(rgPadding)),
                             child: Text(
                               data['message'],
-                              style: rgBook.copyWith(color: Colors.black),
+                              style: rgBook.copyWith(),
                             ),
                           )
                         ],

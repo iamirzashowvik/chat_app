@@ -1,4 +1,5 @@
 import 'package:chat_app/src/common_widgets/base/base_view.dart';
+import 'package:chat_app/src/common_widgets/space/k_sized.dart';
 import 'package:chat_app/src/utils/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -39,12 +40,12 @@ class KErrorWidget extends StatelessWidget {
             "OOPS",
             style: lgBold.copyWith(color: Colors.black),
           ),
-          SizedBox(height: rgPadding),
+          kSizedBox(),
           Text(
             "Check your internet connection",
             style: rgBold.copyWith(color: Colors.black),
           ),
-          SizedBox(height: rgPadding),
+          kSizedBox(),
           RichText(
             textAlign: TextAlign.justify,
             text: TextSpan(
