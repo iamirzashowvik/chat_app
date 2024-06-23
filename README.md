@@ -32,9 +32,7 @@
 
 <table>
  <tr> <td>
- <video width="270" controls>
-  <source src="assets/screens/app_video.mov" type="video/mp4">
-</video>
+ <img src="assets/screens/app_preview.gif" width=270 >
  </td></tr>
 </table>
 ## Database Design:
