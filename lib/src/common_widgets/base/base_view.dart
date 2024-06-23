@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 mixin _BaseView {
   Widget build(BuildContext context) {
     buildMethod();
+
     return Scaffold(
       appBar: appBar(),
       body: SafeArea(

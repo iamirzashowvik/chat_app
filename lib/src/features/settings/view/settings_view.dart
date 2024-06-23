@@ -41,6 +41,6 @@ class _SettingsViewState extends BaseViewState<SettingsView> {
 
   @override
   PreferredSizeWidget? appBar() {
-    return kAppBar(title: 'Settings');
+    return kAppBar(title: 'Settings', leading: const KBackButton());
   }
 }

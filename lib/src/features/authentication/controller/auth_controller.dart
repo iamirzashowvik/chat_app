@@ -2,7 +2,7 @@ import 'package:chat_app/src/constants/app_strings.dart';
 import 'package:chat_app/src/utils/services/auth.dart';
 import 'package:chat_app/src/utils/services/cloud_db.dart';
 import 'package:chat_app/src/utils/services/notification.dart';
-import 'package:chat_app/src/utils/services/shared_preference.dart';
+import 'package:chat_app/src/utils/services/local_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,9 +27,10 @@ class AuthenticationController extends ChangeNotifier {
     notifyListeners();
   }
 
-  getMyId() async {
-    String? id = await LocalStorage.getData(AppStrings.mySecretKey);
-    myId = id ?? "";
+  Future<void> getMyId() async {
+    String id = LocalStorage().getData(AppStrings.mySecretKey);
+    myId = id;
+    notifyListeners();
   }
 
   bool checkAuth() {
@@ -46,6 +47,8 @@ class AuthenticationController extends ChangeNotifier {
   Future<void> signOut() async {
     await Authentication.signOut();
     checkAuth();
+    NotificationService.unsubscribeFromFcm(
+        FirebaseAuth.instance.currentUser!.uid);
     notifyListeners();
   }
 }

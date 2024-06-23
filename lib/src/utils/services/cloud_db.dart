@@ -1,9 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:chat_app/src/constants/app_strings.dart';
 import 'package:chat_app/src/utils/models/user.dart';
-import 'package:chat_app/src/utils/services/shared_preference.dart';
+import 'package:chat_app/src/utils/services/local_storage.dart';
 import 'package:chat_app/src/utils/services/user_secret_generator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,7 +35,7 @@ class CloudDB {
     if (dbUser.docs.isNotEmpty) {
       var data = dbUser.docs.first.data()['key'];
 
-      await LocalStorage.saveData(AppStrings.mySecretKey, data);
+      await LocalStorage().saveData(AppStrings.mySecretKey, data);
     } else {
       var data = {
         "username": user.displayName,
@@ -52,7 +50,7 @@ class CloudDB {
           .doc(user.uid)
           .set(data, SetOptions(merge: true));
 
-      await LocalStorage.saveData(AppStrings.mySecretKey, userKey.toString());
+      await LocalStorage().saveData(AppStrings.mySecretKey, userKey.toString());
       await setLastKey(userKey);
     }
   }
@@ -85,8 +83,8 @@ class CloudDB {
       "receiverUid": receiver.uid,
       "timestamp": FieldValue.serverTimestamp()
     };
-    String? myId = await LocalStorage.getData(AppStrings.mySecretKey);
-    if (myId != null) {
+    String myId = LocalStorage().getData(AppStrings.mySecretKey);
+    if (myId != "") {
       int docId = int.parse(myId) * int.parse(receiver.key);
       await db
           .collection("messages")
@@ -109,7 +107,7 @@ class CloudDB {
 
   Future<void> updateUsersChatList(KUser user, String message) async {
     var myData = {"user": user.toJson(), "message": message};
-    String? myKey = await LocalStorage.getData(AppStrings.mySecretKey);
+    String myKey = LocalStorage().getData(AppStrings.mySecretKey);
     var otherUserData = {
       "message": message,
       "user": {
@@ -117,7 +115,7 @@ class CloudDB {
         "photoURL": FirebaseAuth.instance.currentUser!.photoURL,
         "uid": FirebaseAuth.instance.currentUser!.uid,
         "email": FirebaseAuth.instance.currentUser!.email,
-        "key": myKey ?? ""
+        "key": myKey
       }
     };
     await db

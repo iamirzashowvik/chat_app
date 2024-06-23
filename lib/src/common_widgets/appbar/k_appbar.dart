@@ -1,3 +1,4 @@
+import 'package:chat_app/src/routing/router.dart';
 import 'package:chat_app/src/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -12,4 +13,22 @@ PreferredSizeWidget kAppBar(
     ),
     actions: actions,
   );
+}
+
+class KBackButton extends StatelessWidget {
+  const KBackButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+        onPressed: () {
+          AppRouters.goHome();
+        },
+        icon: const Icon(
+          Icons.arrow_back,
+          color: Colors.white,
+        ));
+  }
 }

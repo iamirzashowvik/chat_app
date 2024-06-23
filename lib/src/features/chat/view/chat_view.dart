@@ -28,6 +28,7 @@ class _ChatViewState extends BaseViewState<ChatView> {
   Widget body() {
     var users = ref.watch(chatProvider).allUsers;
     var threads = ref.watch(chatProvider).threads;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -67,13 +68,12 @@ class _ChatViewState extends BaseViewState<ChatView> {
                 );
               }),
         ),
-        Text("Chats", style: rgBold.copyWith(color: Colors.black)),
+        Text("Your Chats", style: rgBold.copyWith(color: Colors.black)),
         SizedBox(
           height: rgPadding,
         ),
         ListView.builder(
             shrinkWrap: true,
-            reverse: true,
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.only(bottom: rgPadding),
