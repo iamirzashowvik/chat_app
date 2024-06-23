@@ -1,4 +1,5 @@
 import 'package:chat_app/firebase_options.dart';
+import 'package:chat_app/src/common_widgets/snackbar/ksnackbar.dart';
 import 'package:chat_app/src/constants/app_strings.dart';
 import 'package:chat_app/src/utils/services/notification.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
     NotificationService.showForegroundNotification();
     return MaterialApp.router(
+      scaffoldMessengerKey: kSnackbarKey,
       debugShowCheckedModeBanner: false,
       routerConfig: router,
       title: AppStrings.appName,

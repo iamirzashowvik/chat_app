@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
+import 'package:chat_app/src/common_widgets/snackbar/ksnackbar.dart';
 import 'package:chat_app/src/constants/app_strings.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -21,7 +23,15 @@ class NotificationService {
   static showForegroundNotification() {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       log("onMessage: $message");
-      showFlutterNotification(message);
+      RemoteNotification? notification = message.notification;
+      final SnackBar snackBar = SnackBar(
+          content: Column(
+        children: [
+          Text(notification?.title ?? ""),
+          Text(notification?.body ?? ""),
+        ],
+      ));
+      kSnackbarKey.currentState!.showSnackBar(snackBar);
     });
   }
 

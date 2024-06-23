@@ -106,10 +106,15 @@ class CloudDB {
   }
 
   Future<void> updateUsersChatList(KUser user, String message) async {
-    var myData = {"user": user.toJson(), "message": message};
+    var myData = {
+      "user": user.toJson(),
+      "message": message,
+      "timestamp": FieldValue.serverTimestamp()
+    };
     String myKey = LocalStorage().getData(AppStrings.mySecretKey);
     var otherUserData = {
       "message": message,
+      "timestamp": FieldValue.serverTimestamp(),
       "user": {
         "username": FirebaseAuth.instance.currentUser!.displayName,
         "photoURL": FirebaseAuth.instance.currentUser!.photoURL,
@@ -139,6 +144,7 @@ class CloudDB {
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .collection("chats")
         .limit(10)
+        .orderBy("timestamp", descending: true)
         .get();
 
     List<ThreadsModel> usersList = [];
