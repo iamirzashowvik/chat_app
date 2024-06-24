@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "851576399131-kfuuesus9kaok141o926a3fsj3nv97op.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kawaiibd.chat_app",
+            "certificate_hash": "b6175a320d5029d9d78e3d46a7acb03c64872940"
+          }
+        },
+        {
           "client_id": "851576399131-2m3o02o4e7n1pqgdjn9metvhud4685hp.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "851576399131-2m3o02o4e7n1pqgdjn9metvhud4685hp.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "851576399131-4r8ggedl66lqhuam8d4si6tiafjhacsb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kawaiibd.chatApp"
+              }
             }
           ]
         }

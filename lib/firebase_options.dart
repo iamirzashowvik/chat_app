@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '851576399131',
     projectId: 'kawaiibd-chatapp',
     storageBucket: 'kawaiibd-chatapp.appspot.com',
+    androidClientId: '851576399131-kfuuesus9kaok141o926a3fsj3nv97op.apps.googleusercontent.com',
     iosClientId: '851576399131-4r8ggedl66lqhuam8d4si6tiafjhacsb.apps.googleusercontent.com',
     iosBundleId: 'com.kawaiibd.chatApp',
   );
